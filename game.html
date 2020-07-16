@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>memory-lost</title>
+    <style>
+        .background {
+            background: url("./image/background.jpeg");
+        }
+
+        h1 {
+            font-family: 'Sofia', sans-serif;
+            color: #fff;
+            font-size: 4em;
+            text-align: center;
+        }
+
+        img {
+            border: 1px solid;
+        }
+
+        #cards {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 8%;
+            width: 42%;
+        }
+
+        #cards img {
+            flex-basis: 20%;
+            cursor: pointer;
+        }
+
+        .hover {
+            transition: transform .2s;
+            transform: scale(1.1);
+            border: 2px solid #5878d3;
+        }
+
+        .btn {
+            padding: 40px 70px;
+            background: rgba(78, 35, 100, 0.4);
+            color: #fff;
+            border: 1px solid #b5cee3;
+            font-size: 45px;
+            text-align: center;
+            margin-left: 37%;
+            margin-top: 8%;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transition: transform .2s;
+            transform: scale(1.4);
+        }
+
+        .boards {
+            padding: 30px 4px;
+            background: rgba(78, 35, 100, 0.4);
+            color: #fff;
+            border: 1px solid #b5cee3;
+            font-size: 45px;
+            text-align: center;
+            margin: 0px
+        }
+
+        label {
+            color: #fff;
+            font-size: 50px;
+        }
+
+        ul li {
+            width: 25%;
+            display: inline-grid
+        }
+
+        ul li .btn {
+            padding: 29px 0px;
+            background: rgba(78, 35, 100, 0.4);
+            color: #fff;
+            border: 1px solid #b5cee3;
+            font-size: 45px;
+            text-align: center;
+            margin-top: 3%;
+            cursor: pointer;
+        }
+
+        ul li .btn:hover {
+            transition: transform .2s;
+            transform: scale(1.1);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body onload="start()" class="background">
+    <h1>Memory Lost ? Try something!!</h1>
+    <input id="btn" class="btn" type="button" value="Lets Play!">
+
+    <div id="displayGame">
+        <div id="cards">
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="0" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="1" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="2" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="3" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="4" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="5" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="6" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="7" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="8" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="9" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="10" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="11" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="12" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="13" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="14" />
+            <img src="image/blank.png" alt="first cards" onclick="flip(this.id)" id="15" />
+        </div>
+        <ul>
+            <li>
+                <label>Scores </label>
+                <p class="boards" id="score"></p>
+            </li>
+            <li>
+                <label>Timer Elapsed</label>
+                <p class="boards" id="totalTime"></p>
+            </li>
+            <li>
+                <label> </label>
+                <input id="finish" class="btn" type="button" value="Finish!">
+            </li>
+        </ul>
+    </div>
+    <div id="complete">
+        <ul>
+            <li>
+                <label>Your score is </label>
+                <p class="boards" id="finalScore"></p>
+            </li>
+            <li>
+                <label>Time Taken </label>
+                <p class="boards" id="finalTotalTime"></p>
+            </li>
+        </ul>
+        <input id="startAgain" class="btn" type="button" value="Start Over">
+    </div>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
